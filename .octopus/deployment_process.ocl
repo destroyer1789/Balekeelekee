@@ -1,12 +1,11 @@
-step "deploy-a-release" {
-    name = "Deploy a Release"
+step "send-an-email" {
+    name = "Send an Email"
 
     action {
-        action_type = "Octopus.DeployRelease"
+        action_type = "Octopus.Email"
         properties = {
-            Octopus.Action.DeployRelease.DeploymentCondition = "Always"
-            Octopus.Action.DeployRelease.ProjectId = "incognito"
+            Octopus.Action.Email.Subject = "http"
+            Octopus.Action.Email.To = "vlad@inclowd.com"
         }
-        worker_pool_variable = ""
     }
 }
